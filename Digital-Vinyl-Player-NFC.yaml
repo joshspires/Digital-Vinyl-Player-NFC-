@@ -6,8 +6,7 @@ esp32:
   board: esp32-s3-devkitc-1
   framework:
     type: arduino
-
-# Enable logging
+    
 logger:
 
 ota:
@@ -17,7 +16,6 @@ wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Esphome-Web-32S3"
     password: "qq4Q8emK58E3"
@@ -28,13 +26,13 @@ api:
   encryption:
     key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   services:
-    - service: stepper_stop
+    - service: stepper_stop #stops the stepper motor from moving, can be activated by using an additional NFC tag
       then:
         - stepper.set_target:
             id: vinyl_stepper
             target: !lambda 'return id(vinyl_stepper).current_position;'
 
-    - service: stepper_start
+    - service: stepper_start #starts the stepper motor. with 500 steps per second for 17280000, it will mvoe for 9.6 hours. Lazy I know
       then:
         - stepper.set_target:
             id: vinyl_stepper
