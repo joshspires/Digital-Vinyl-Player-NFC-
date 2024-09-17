@@ -11,7 +11,7 @@ esp32:
 logger:
 
 ota:
-  password: "cb63cf11adef9ad284c02033212ac68c"
+  password: "xxxxxxxxxxxxxxxxxxx"
 
 wifi:
   ssid: !secret wifi_ssid
@@ -26,7 +26,7 @@ captive_portal:
 
 api:
   encryption:
-    key: "td4rkNzmqIa3aIjXWkLC83GoSvWKTHKXvA1c3glQc40="
+    key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   services:
     - service: stepper_stop
       then:
