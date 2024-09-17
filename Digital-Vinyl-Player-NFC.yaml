@@ -38,7 +38,7 @@ api:
             id: vinyl_stepper
             target: !lambda 'return id(vinyl_stepper).current_position + 17280000;'
     
-stepper:
+stepper: #stepper motor drive
   - platform: uln2003
     id: vinyl_stepper
     pin_a: GPIO1
@@ -52,7 +52,7 @@ i2c:
   sda: GPIO35
   scl: GPIO36
 
-pn532_i2c:
+pn532_i2c: #NFC tag reader
   id: pn532_tag_id
   on_tag:
     then:
